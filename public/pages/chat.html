@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../styles/global.css">
   <link rel="stylesheet" href="../styles/chat.css">
-  <script src="../js/dependencies/client-dist/socket.io.js"></script>
+  <script src="../js/dependencies/socketio/socket.io.js"></script>
   <script src="../js/pages/chat/index.js"></script>
   <title>Chat</title>
 </head>
@@ -19,13 +19,22 @@
           Gabriel entrou.
         </span>
       </div> -->
+      <!-- <div class='container'>
+        <img 
+          src='https://w.wallhaven.cc/full/dp/wallhaven-dpgdwm.jpg' 
+          alt='img_qlqr' 
+        /> 
+      </div> -->
     </section>
-    <form> 
+    <form>
       <input 
         type="text" 
         class='message' 
-        placeholder="Escreva algo....">
+        placeholder="Escreva algo...."
+      />
+      <input type="file" id="photo" name="file"/> 
       <button type="button" onclick="sendMessage()">Enviar</button>
+      <button type="button" onclick="selectImage()">Img</button>
       <button type="button" onclick="leave()">Sair</button>
     </form>
   </div>

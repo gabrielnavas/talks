@@ -6,7 +6,6 @@ function login() {
     `
     return
   }
-  console.log(name.trim())
   localStorage['name'] = name.trim()
   window.location.href = '/chat'
 }
