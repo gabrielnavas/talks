@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Minimal working example</title>
+</head>
+<body>
+    <ul id='chat'></ul>
+
+    <label>chat</label> <br/>
+    <textarea id='textarea' ></textarea><br/>
+    <button onclick="sendText()">Send</button>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const socket = io();
+
+      socket.on('connect', socket => {
+        console.log('Wellcome!!')
+      });
+
+      const insertNewMessage = message => {
+        console.log(message)
+        const $chat = document.getElementById('chat');
+        const item = document.createElement('li');
+        item.innerText = message.text;
+        $chat.appendChild(item)
+      };
+      
+      const sendText = () => {
+        const $textarea = document.getElementById('textarea')
+        emitToSocket($textarea.value)
+      }
+
+      const emitToSocket = text => {
+        socket.emit('chat', {id: 1, text})
+      };
+      
+      socket.on('chat', message => {
+        insertNewMessage(message)
+      })
+      
+     
+    </script>
+</body>
+</html>

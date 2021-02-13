@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles/global.css">
+  <link rel="stylesheet" href="../styles/chat.css">
+  <script src="../js/dependencies/client-dist/socket.io.js"></script>
+  <script src="../js/pages/chat/index.js"></script>
+  <title>Chat</title>
+</head>
+<body>
+  <div class='wrapper'>
+    <section class='feed'>
+      <!-- <div class='container'>
+        <span>
+          Gabriel entrou.
+        </span>
+      </div> -->
+    </section>
+    <form> 
+      <input 
+        type="text" 
+        class='message' 
+        placeholder="Escreva algo....">
+      <button type="button" onclick="sendMessage()">Enviar</button>
+      <button type="button" onclick="leave()">Sair</button>
+    </form>
+  </div>
+</body>
+
+</html>
