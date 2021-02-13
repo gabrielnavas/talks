@@ -21,16 +21,18 @@ const makeMessage = (name, text) => ({
 })
 
 io.on('connection', function(socket) {
-  console.log('A user connected');
-
+  
   const userConnected = 'user_connected'
   socket.on(userConnected, userName => {
+    console.log(`User ${userName} is connected.`);
+    socket.broadcast.emit(userConnected, makeMessage(userName, undefined))
     socket.emit(userConnected, makeMessage(userName, undefined))
   })
 
   const feedMessage = 'feed_message'
   socket.on(feedMessage, message => {
     console.log(makeMessage(message.name,message.text))
+    socket.broadcast.emit(feedMessage, makeMessage(message.name,message.text))
     socket.emit(feedMessage, makeMessage(message.name,message.text))
   })
 });
