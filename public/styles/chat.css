@@ -19,7 +19,7 @@
   flex-direction: column;
   overflow-x: auto;
   width: 90%;
-  height: 86%;
+  height: 90vh;
   background: linear-gradient(
     45deg, rgba(2, 0, 36, 0.118) 0%,
     rgba(101, 101, 184, 0.789) 61%,
@@ -57,9 +57,12 @@
 }
 
 form {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   width: 90%;
   height: 5%;
-  margin: 5% 0 0 0;
+  margin: 1% 0 0 0;
 }
 
 form > input {
@@ -93,8 +96,9 @@ input:active {
     rgb(0, 213, 255) 100%);
 }
 
-form > button {
+form button {
   border-radius: 5px;
+  margin: 0 5px;
   height: 30px;
   border: none;
   font-size: 18px;
