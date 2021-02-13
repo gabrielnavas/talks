@@ -12,7 +12,7 @@ app.get('/chat', function(req, res) {
   res.sendFile(__dirname + '/public/pages/chat.html');
 });
 
-app.get('/login', function(req, res) {
+app.get('/', function(req, res) {
   res.sendFile(__dirname + '/public/pages/login.html');
 });
 
