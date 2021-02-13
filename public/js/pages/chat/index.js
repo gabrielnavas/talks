@@ -1,14 +1,17 @@
-
 const socket = io()
 const userConnected = 'user_connected'
 const feedMessage = 'feed_message'
+
+
+const userName = localStorage['name']
+
 const makeMessage = (name, text) => ({
   name, text
 })
 
 const leave = () => {
   delete localStorage['name']
-  window.location.href = '/login'
+  window.location.href = '/'
 }
 
 const makeFeedItemConnected = name => `
@@ -36,7 +39,6 @@ const sendMessage = () => {
 
 const main = () => {
 
-  let userName = localStorage['name']
   if(userName === undefined) {
     leave()
   }
