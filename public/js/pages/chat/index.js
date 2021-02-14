@@ -79,6 +79,27 @@ const selectImage = () => {
   document.querySelector('#photo').click()
 }
 
+const openButtonFloat = () => {
+  const $element = document.querySelector('#button_float_open') 
+  const content = $element.innerText
+  if(content === '+') {
+    $element.innerText = 'X'
+    document.querySelector('.button_enviar_photo').style.display = 'block'
+  } else {
+    $element.innerText = '+'
+    document.querySelector('.button_enviar_photo').style.display = 'none'
+  }
+}
+
+const toggleMenuAsideRight = e => {
+  var element = document.querySelector('.menu_aside_right');
+  if ( element.style.display !== 'none' && !element.contains(e.target)) {
+    element.style.display = 'none';
+  } else if(e.className === 'wrapper') {
+    element.style.display = 'flex';
+  }
+}
+
 const main = () => {
 
   if(userName === undefined) {

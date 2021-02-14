@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Reggae+One&display=swap');
 
 .wrapper {
   flex-direction: column;
@@ -11,7 +12,8 @@
 
 
 .wrapper > label {
-  color: rgba(0, 212, 255, 1);
+  color: rgb(50, 170, 191);
+  font-family: 'Reggae One', cursive;
   font-style: oblique;
   font-size: 70px;
   margin: 50px 0;
@@ -44,15 +46,17 @@ input {
   background: linear-gradient(
       45deg,rgba(101, 101, 184, 0.864) 61%,
     rgba(0, 213, 255, 0.741) 100%);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Reggae One', cursive, sans-serif;
   margin: 20px 0;
 }
 
 input::placeholder {
   color: rgba(138, 207, 220, 0.57);
-  font-size: 19px;
+  font-size: 16px;
   font-weight: 400;
+  font-family: 'Reggae One', cursive, sans-serif;
 }
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -98,7 +102,7 @@ input {
   border-radius: 10px;
   height: 25px;
   width: 70%;
-  border: 1px solid #FFF0;
+  border: 1px none rgba(0, 0, 0, 0);
   font-size: 21px;
   outline: none;
   padding: 5px 10px;
@@ -106,12 +110,13 @@ input {
   background: linear-gradient(
       45deg,rgba(101, 101, 184, 0.864) 61%,
     rgba(0, 213, 255, 0.741) 100%);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Reggae One', cursive, sans-serif;
   margin: 20px 0;
 }
 
 input::placeholder {
   color: rgba(138, 207, 220, 0.57);
+  font-family: 'Reggae One', cursive, sans-serif;
   font-size: 19px;
   font-weight: 400;
 }
@@ -124,21 +129,22 @@ input:active {
   border: 1px solid linear-gradient(
       45deg,rgba(101, 101, 184, 0.864) 61%,
     rgba(0, 213, 255, 0.741) 100%);
+  
 }
 
 button {
   border-radius: 10px;
-  height: 35px;
+  height: 40px;
   width: 70%;
   border: none;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: bold;
   outline: none;
   color: rgba(0, 213, 255, 0.549);
   background: linear-gradient(
       45deg,rgba(101, 101, 184, 0.644) 61%,
     rgba(0, 213, 255, 0.549) 100%);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Reggae One', cursive, sans-serif;
   cursor: pointer;
 }
 
@@ -170,7 +176,7 @@ button {
   background: linear-gradient(
       45deg,rgba(101, 101, 184, 0.644) 61%,
     rgba(0, 213, 255, 0.549) 100%);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Reggae One', cursive, sans-serif;
   cursor: pointer;
 }
 
@@ -197,6 +203,7 @@ button {
     font-size: 35px;
     font-weight: bold;
     margin: 10px 0;
+    font-family: 'Reggae One', cursive, sans-serif;
   }
 }
 
@@ -235,14 +242,13 @@ button {
     margin: 50px 0;
   }
   
-  
   .card  {
     display: flex;
     flex-direction: column;
     background-color: antiquewhite;
     border-radius: 20px;
     padding: 80px 75px;
-    min-width: 400px;
+    min-width: 450px;
     min-height: 200px;
     background: linear-gradient(
       45deg, rgba(2, 0, 36, 0.658) 0%,
@@ -278,7 +284,7 @@ button {
     background: linear-gradient(
         45deg,rgba(101, 101, 184, 0.644) 61%,
       rgba(0, 213, 255, 0.549) 100%);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Reggae One', cursive, sans-serif;
     cursor: pointer;
   }
 }

@@ -12,7 +12,17 @@
   <title>Chat</title>
 </head>
 <body>
-  <div class='wrapper'>
+  <div class='wrapper'
+    onclick="toggleMenuAsideRight(this)">
+    <header>
+      <span>
+        Talks
+      </span>
+      <button onclick="toggleMenuAsideRight()">=</button>
+      <aside class='menu_aside_right'>
+        <span onclick="leave()">Sair</span>
+      </aside>
+    </header>
     <section class='feed'>
       <!-- <div class='container'>
         <span>
@@ -34,8 +44,16 @@
       />
       <input type="file" id="photo" name="file"/> 
       <button type="button" onclick="sendMessage()">Enviar</button>
-      <button type="button" onclick="selectImage()">Img</button>
-      <button type="button" onclick="leave()">Sair</button>
+      <div>
+        <div 
+        class='button_enviar_photo'
+        onclick="selectImage()">
+          Enviar foto
+        </div>
+      </div>
+      <div class='button_float' onclick="openButtonFloat()">
+        <span id='button_float_open'>+</span>
+      </div>
     </form>
   </div>
 </body>
