@@ -70,7 +70,6 @@ const sendImagem = () => {
     userName,
       photo.name
     ))
-    document.querySelector('#photo').files = null
   }
 }
 
@@ -91,14 +90,15 @@ const openButtonFloat = () => {
   }
 }
 
-const toggleMenuAsideRight = e => {
-  var element = document.querySelector('.menu_aside_right');
-  if ( element.style.display !== 'none' && !element.contains(e.target)) {
-    element.style.display = 'none';
-  } else if(e.className === 'wrapper') {
-    element.style.display = 'flex';
+const toggleMenuAsideRight = () => {
+  const $element = document.querySelector('.menu_aside_right')
+  if($element.style.display === '' || $element.style.display === 'none') {
+    $element.style.display = 'flex'
+  } else {
+    $element.style.display = 'none'
   }
 }
+
 
 const main = () => {
 

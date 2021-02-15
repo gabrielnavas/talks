@@ -12,16 +12,22 @@
   <title>Chat</title>
 </head>
 <body>
-  <div class='wrapper'
-    onclick="toggleMenuAsideRight(this)">
+  <aside class='menu_aside_right'>
+    <div class='menu_aside_right__header'>
+      <span>
+        Menu
+      </span>
+      <button onclick="toggleMenuAsideRight()">x</button>
+    </div>
+    <span class='menu_aside_right_item' onclick="leave()">Mudar Nome</span>
+  </aside>
+  <div 
+    class='wrapper'>
     <header>
       <span>
         Talks
       </span>
       <button onclick="toggleMenuAsideRight()">=</button>
-      <aside class='menu_aside_right'>
-        <span onclick="leave()">Sair</span>
-      </aside>
     </header>
     <section class='feed'>
       <!-- <div class='container'>
