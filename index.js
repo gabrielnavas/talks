@@ -1,38 +1,48 @@
-const express = require('express');
+const express = require('express')
 const path = require('path')
 const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
+
 const port = process.env.PORT || 3000
 
+// define static files
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.get('/chat', function(req, res) {
-  res.sendFile(__dirname + '/public/pages/chat.html');
-});
 
-app.get('/', function(req, res) {
-  res.sendFile(__dirname + '/public/pages/login.html');
-});
+// define all routes
+const routes = express.Router()
+app.use(routes)
+require('./src/routes/chat')(routes)
+require('./src/routes/login')(routes)
 
-const makeMessage = (name, text) => ({
-  name, text
-})
+
 
 io.on('connection', function(socket) {
-  
+  // sockets modules
+  const makeMessage = () => (name, text) => ({
+    name, text
+  })
+
   const userConnected = 'user_connected'
   socket.on(userConnected, userName => {
     console.log(`User ${userName} is connected.`);
-    socket.broadcast.emit(userConnected, makeMessage(userName, undefined))
-    socket.emit(userConnected, makeMessage(userName, undefined))
+    const obj = {
+      name: userName
+    }
+    socket.broadcast.emit(userConnected, obj)
+    socket.emit(userConnected, obj)
   })
 
   const feedMessage = 'feed_message'
   socket.on(feedMessage, message => {
-    socket.broadcast.emit(feedMessage, makeMessage(message.name,message.text))
-    socket.emit(feedMessage, makeMessage(message.name,message.text))
+    const obj = {
+      name: message.name,
+      text: message.text
+    }
+    socket.broadcast.emit(feedMessage, obj)
+    socket.emit(feedMessage, obj)
   })
 
   const feedImage = 'feed_image'
@@ -101,7 +111,7 @@ io.on('connection', function(socket) {
   })
 });
 
-
+// server http
 http.listen(port, function() {
    console.log(`listening on port ${port}`);
 });
